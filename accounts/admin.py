@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth import get_user_model
 from .forms import UserChangeForm, UserCreationForm
+from .models import Students, Schools
 
 User = get_user_model()
 
@@ -25,3 +26,5 @@ class CustomizeUserAdmin(UserAdmin):
     )
 
 admin.site.register(User, CustomizeUserAdmin)
+admin.site.register(Students)
+admin.site.register(Schools)

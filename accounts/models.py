@@ -45,3 +45,21 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+    
+class Students(models.Model):
+
+    name = models.CharField(max_length=20)
+    age = models.IntegerField()
+    score = models.IntegerField()
+    school = models.ForeignKey(
+        'Schools', on_delete=models.CASCADE
+    )
+
+    class Meta:
+        db_table = 'students'
+
+class Schools(models.Model):
+    name = models.CharField(max_length=20)
+
+    class Meta:
+        db_table = 'schools'
