@@ -64,7 +64,7 @@ class Students(models.Model):
         return self.name + ': ' + str(self.age)
 
 class Schools(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, verbose_name='学校名')
 
     class Meta:
         db_table = 'schools'
